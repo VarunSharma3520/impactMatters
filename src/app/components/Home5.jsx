@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { ArrowUpRight, X, Plus } from "lucide-react";
 import Link from "next/link";
-
+import noise from "../../assets/images/noise.svg"
 const data = [
 	{
 		title: "IMPACT INVESTMENT FUNDS",
@@ -51,7 +51,15 @@ const data = [
 export default function Home5() {
 	const [openIndex, setOpenIndex] = useState(0);
 	return (
-		<div className="bg-green-950 text-amber-100 p-6 md:p-12 space-y-6 font-sans">
+		<div
+			className="bg-green-950 text-amber-100 p-6 md:p-12 space-y-6 font-sans"
+			style={{
+				backgroundImage: `url(${noise.src})`,
+				backgroundSize: "cover",
+				backgroundRepeat: "repeat",
+				backgroundBlendMode: "overlay",
+			}}
+		>
 			<div className="uppercase text-xs text-green-100 tracking-widest">
 				What we do
 			</div>
@@ -72,8 +80,10 @@ export default function Home5() {
 							} transition-colors duration-200`}
 						>
 							<button
-                onClick={() => setOpenIndex(isOpen ? null : index)}
-                className={`w-full text-left flex justify-between items-center px-4 py-4 font-semibold ${isOpen?"text-green-950":""}`}
+								onClick={() => setOpenIndex(isOpen ? null : index)}
+								className={`w-full text-left flex justify-between items-center px-4 py-4 font-semibold ${
+									isOpen ? "text-green-950" : ""
+								}`}
 							>
 								{item.title}
 								<span className="ml-4">

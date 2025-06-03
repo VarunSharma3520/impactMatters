@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import noise from "../../assets/images/noise.svg"
+
 
 export default function Home4() {
 	const principles = [
@@ -11,7 +13,15 @@ export default function Home4() {
 	];
 
 	return (
-		<section className="bg-[#0D1F12] text-amber-50 px-6 py-16 relative">
+		<section
+			className="bg-[#0D1F12] text-amber-50 px-6 py-16 relative"
+			style={{
+				backgroundImage: `url(${noise.src})`,
+				backgroundSize: "cover",
+				backgroundRepeat: "repeat",
+				backgroundBlendMode: "overlay",
+			}}
+		>
 			<div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
 				{/* Left side */}
 				<div>
