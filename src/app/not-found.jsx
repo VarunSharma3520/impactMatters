@@ -14,10 +14,10 @@ export default function NotFound() {
       }}
     >
       <div className="flex flex-col items-center text-center space-y-6 animate-fade-in">
-        <h2 className="text-5xl md:text-7xl font-bold tracking-wide animate-slide-up">
+        <h2 className="text-4xl md:text-7xl font-bold tracking-wide animate-slide-up">
           404 | Not Found
         </h2>
-        <p className="text-lg text-green-100 animate-fade-in-slow">
+        <p className="text-md md:text-lg text-green-100 animate-fade-in-slow">
           Oops! We couldn't find the page you're looking for.
         </p>
         <Link

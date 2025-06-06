@@ -85,7 +85,7 @@ const [openIndex, setOpenIndex] = useState(0);
 								onClick={() => setOpenIndex(isOpen ? null : index)}
 								className={`w-full text-left flex justify-between items-center px-3 sm:px-4 py-3 sm:py-4 font-semibold text-base sm:text-lg ${
 									isOpen ? "text-green-950" : ""
-								} focus:outline-none focus:ring-2 focus:ring-green-300`}
+								}`}
 								aria-expanded={isOpen}
 								aria-controls={`accordion-content-${index}`}
 								id={`accordion-header-${index}`}
@@ -109,11 +109,11 @@ const [openIndex, setOpenIndex] = useState(0);
 									{item.link && (
 										<Link
 											href={item.link}
-											className="inline-flex items-center px-4 py-2 bg-green-900 rounded hover:bg-green-800 transition text-sm sm:text-base whitespace-nowrap"
+											className="mt-2 inline-flex items-center px-2 py-2 rounded bg-green-900  hover:bg-green-800 transition text-sm sm:text-base "
 											aria-label={`Learn more about ${item.title}`}
 										>
+											Learn More 
 											<ArrowUpRight className="w-4 h-4 mr-1" />
-											Learn More
 										</Link>
 									)}
 								</div>

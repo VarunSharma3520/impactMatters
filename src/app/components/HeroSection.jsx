@@ -4,7 +4,7 @@ import noise from "../../assets/images/noise.svg";
 export default function HeroSection() {
   return (
     <main
-      className="bg-green-950 text-neutral-100 px-4 py-12 flex items-center justify-center min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh]"
+      className="bg-green-950 text-neutral-100 px-4 py-12 flex items-baseline-last justify-center min-h-[60vh] sm:min-h-[70vh] md:min-h-[90vh]"
       style={{
         backgroundImage: `url(${noise.src})`,
         backgroundSize: "cover",
