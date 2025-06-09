@@ -1,5 +1,5 @@
 export default function ImpactCard({
-	number = 1,
+	number = "01",
 	heading1 = "Impact-Focused",
 	heading2 = "Investment Funds",
 	heading3=""
