@@ -13,7 +13,7 @@ export default function HeroSection() {
       }}
     >
       <div className="text-center max-w-5xl px-4">
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-amber-100 font-bold leading-tight tracking-tight">
+        <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl text-amber-100 font-bold leading-tight tracking-tight">
           Impact Matters
         </h1>
       </div>

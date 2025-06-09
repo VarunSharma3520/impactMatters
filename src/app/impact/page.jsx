@@ -4,7 +4,7 @@ import ImpactCard from "../components/ImpactCard";
 
 function WhoWeServe() {
 	return (
-		<section className="md:ml-[18rem] flex  text-green-900 py-20 px-4 md:px-12">
+		<section className="md:ml-[20rem] flex  text-green-900 py-20 px-4 md:px-12">
 			<div className="max-w-7xl mx-auto">
 				{/* Heading Section */}
 				<div className="mb-12">
