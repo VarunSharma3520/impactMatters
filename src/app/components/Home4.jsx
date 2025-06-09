@@ -1,8 +1,9 @@
 "use client";
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import noise from "../../assets/images/noise.svg"
-
+import { useState } from "react";
+import noise from "../../assets/images/noise.svg";
 
 export default function Home4() {
 	const principles = [
@@ -11,6 +12,19 @@ export default function Home4() {
 		"Co-Creation",
 		"Collective Intelligence",
 	];
+
+	const descriptions = {
+		Community:
+			"We serve the community not only by supporting our clients but by deeply understanding the contexts and communities they come from — prioritizing people at the heart of every project, especially in Los Angeles, where we’re honored to be a trusted advisor in creating lasting legacies.",
+		Culture:
+			"Our legal approach is rooted in cultural understanding — honoring diverse backgrounds, experiences, and traditions to help shape practices that reflect equity and inclusivity at every level.",
+		"Co-Creation":
+			"We work side-by-side with our clients, building solutions collaboratively. We believe shared ownership of ideas leads to better outcomes, more resilient strategies, and long-term success.",
+		"Collective Intelligence":
+			"Together, we are smarter. We draw on interdisciplinary knowledge, partner insights, and community wisdom to deliver legal solutions that are informed, inclusive, and forward-thinking.",
+	};
+
+	const [active, setActive] = useState("Community");
 
 	return (
 		<section
@@ -22,7 +36,7 @@ export default function Home4() {
 				backgroundBlendMode: "overlay",
 			}}
 		>
-			<div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+			<div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 relative z-10">
 				{/* Left side */}
 				<div>
 					<h2 className="text-2xl md:text-4xl leading-tight font-light">
@@ -38,36 +52,41 @@ export default function Home4() {
 					</p>
 
 					<ul className="space-y-4">
-						{principles.map((item, i) => (
+						{principles.map((item) => (
 							<li
-								key={i}
-								className="flex border-t border-neutral-600 py-4 text-lg uppercase tracking-wide"
+								key={item}
+								className={`flex border-t border-neutral-600 py-4 text-lg hover:font-bold uppercase tracking-wide transition-colors ${
+									active === item ? "text-white font-bold" : "text-amber-50"
+								}`}
 							>
-								<Link
-									href="#"
-									className="flex items-center justify-between w-full text-amber-50 hover:text-white transition-colors"
+								<button
+									onClick={() => setActive(item)}
+									className="flex items-center justify-between w-full hover:text-white transition group"
 								>
 									<span>{item}</span>
-									<ArrowRight size={20} />
-								</Link>
+									<ArrowRight
+										size={20}
+										className="transform transition-transform group-hover:translate-x-1"
+									/>
+								</button>
 							</li>
 						))}
 					</ul>
 				</div>
 
-				{/* Right side */}
-				<div className="text-sm leading-relaxed">
-					<p>
-						Our core principles shape every partnership we build and every
-						solution we craft for and with our clients. Based in Los Angeles,
-						our practice is built on a foundation of collaboration, creativity,
-						and a deep commitment to community-driven impact.
-					</p>
+				{/* Right side (Dynamic content) */}
+				<div className="text-sm leading-relaxed my-auto text-neutral-300">
+					<p>{descriptions[active]}</p>
+					<Link
+						href="/impact"
+						className="inline-flex items-center mt-6 text-xs border border-amber-100 px-6 py-2 hover:bg-amber-100 hover:text-green-950 transition"
+					>
+						Learn more <ArrowRight className="ml-1" size={14} />
+					</Link>
 				</div>
 			</div>
 
-			{/* Optional background graphic (abstract wave) */}
-			{/* Replace with SVG or bg-image if you want to match exactly */}
+			{/* Optional overlay */}
 			<div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#183a2c33] to-[#0D1F12]"></div>
 		</section>
 	);
