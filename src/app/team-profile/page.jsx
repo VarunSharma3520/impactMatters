@@ -205,12 +205,12 @@ const PublicationsAndPracticeAreas = ({
           Publication
         </h2>
         {/* <hr className="bg-green-900 mb-6" /> */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px border-t-2 border-b-2 border-green-900">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px md:border-t-2 md:border-b-2 border-green-900">
           {publications.map((pub, index) => (
             <div
               key={pub.id}
               className={`p-6 flex flex-col ${
-                index !== publications.length - 1 ? "border-r-2 border-green-900": ""
+                index !== publications.length - 1 ? "lg:border-r-2  sm:border-b-0 border-b-2 border-green-900": ""
               }`}
             >
               <div className="text-green-800 font-light mb-12 text-5xl">
