@@ -41,8 +41,8 @@ export default function Home3() {
 	return (
 		<section className="bg-white text-green-900 px-6 py-12 border-t border-b border-black relative overflow-hidden">
 			<div className="max-w-6xl mx-auto relative z-10">
-				<p className="uppercase text-sm font-semibold tracking-widest mb-2">
-					Who We Serve
+				<p className="text-sm font-semibold tracking-widest mb-2">
+					WHO WE SERVE
 				</p>
 				<h2 className="text-2xl md:text-4xl font-medium leading-snug">
 					We&apos;re proud to partner with the{" "}
