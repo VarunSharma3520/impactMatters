@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 1s ease-out forwards;
+}
+
 /* :root {
 	--background: #ffffff;
 	--foreground: #1D3319;

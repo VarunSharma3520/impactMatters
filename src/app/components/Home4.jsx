@@ -15,9 +15,9 @@ export default function Home4() {
 
 	const descriptions = {
 		Community:
-			"We serve the community not only by supporting our clients but by deeply understanding the contexts and communities they come from — prioritizing people at the heart of every project, especially in Los Angeles, where we’re honored to be a trusted advisor in creating lasting legacies.",
+			"We serve the community not only by supporting our clients but by deeply understanding the contexts and communities they come from — prioritizing people every project, especially in work",
 		Culture:
-			"Our legal approach is rooted in cultural understanding — honoring diverse backgrounds, experiences, and traditions to help shape practices that reflect equity and inclusivity at every level.",
+			"Our legal approach is rooted in cultural understanding — honoring diverse backgrounds, experiences, and traditions to help shape practices that reflect equity and inclusively at every level.",
 		"Co-Creation":
 			"We work side-by-side with our clients, building solutions collaboratively. We believe shared ownership of ideas leads to better outcomes, more resilient strategies, and long-term success.",
 		"Collective Intelligence":
@@ -76,7 +76,7 @@ export default function Home4() {
 
 				{/* Right side (Dynamic content) */}
 				<div className="text-sm leading-relaxed my-auto text-neutral-300">
-					<p>{descriptions[active]}</p>
+					<p className="mt-6">{descriptions[active]}</p>
 					<Link
 						href="/impact"
 						className="inline-flex items-center mt-6 text-xs border border-amber-100 px-6 py-2 hover:bg-amber-100 hover:text-green-950 transition"
