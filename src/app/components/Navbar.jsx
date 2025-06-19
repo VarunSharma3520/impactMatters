@@ -22,13 +22,13 @@ export default function Navbar() {
 	};
 
 	const practiceAreas = [
-		"Capital Raising & Securities Law",
-		"Impact Investment Funds",
-		"Community Land Ownership",
-		"Cooperatives",
-		"Corporate Law",
-		"Intellectual Property",
-		"Outside General Counsel",
+		{ label: "Capital Raising & Securities Law", href: "/contact-us" },
+		{ label: "Impact Investment Funds", href: "/impact" },
+		{ label: "Community Land Ownership", href: "/impact-funds" },
+		{ label: "Cooperatives", href: "/team-member" },
+		{ label: "Corporate Law", href: "/team-profile" },
+		{ label: "Intellectual Property", href: "/who-we-serve" },
+		{ label: "Outside General Counsel", href: "/not-found" },
 	];
 
 	const renderDropdownContent = () => (
@@ -43,7 +43,8 @@ export default function Navbar() {
 					<h3 className="text-xl font-semibold mb-4">What we do</h3>
 					<p className="text-sm mb-12">
 						We're proud to partner with{" "}
-						<span className="font-semibold">the builders of tomorrow</span> — those shaping a brighter, more equitable future.
+						<span className="font-semibold">the builders of tomorrow</span> —
+						those shaping a brighter, more equitable future.
 					</p>
 					<Link
 						href="/impact"
@@ -57,14 +58,14 @@ export default function Navbar() {
 
 				{/* Right Column */}
 				<ul className="text-sm flex flex-col border-gray-400 divide-y divide-gray-600">
-					{practiceAreas.map((area, idx) => (
+					{practiceAreas.map(({ label, href }, idx) => (
 						<li key={idx}>
 							<Link
-								href="/practice-areas"
+								href={href}
 								className="block hover:font-semibold hover:cursor-pointer py-3"
 								onClick={closeMenus}
 							>
-								{area}
+								{label}
 							</Link>
 						</li>
 					))}
@@ -75,7 +76,7 @@ export default function Navbar() {
 
 	return (
 		<nav
-			className="bg-green-950 py-4 px-6 text-amber-100 relative z-50"
+			className="bg-green-950 py-4 px-6 text-amber-100 sticky top-0 z-50"
 			style={menuStyles}
 		>
 			<div className="max-w-7xl mx-auto flex justify-between items-center relative z-50">
