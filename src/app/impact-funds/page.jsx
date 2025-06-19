@@ -102,7 +102,6 @@ function CaseStudySection() {
 	return (
 		<section className="bg-purple-950 text-white px-4 md:px-20 py-42">
 			<div className="max-w-7xl mx-auto flex flex-col gap-12">
-				
 				{/* Header */}
 				<div className="flex items-center lg:ml-24 space-x-3 text-xl font-semibold text-purple-100/75">
 					<p>01.</p>
@@ -111,7 +110,6 @@ function CaseStudySection() {
 
 				{/* Content Flex Container */}
 				<div className="flex flex-col-reverse md:flex-row items-center md:items-start gap-10">
-					
 					{/* Left: Icon */}
 					<div className="hidden lg:flex justify-center md:w-1/3">
 						<div className="bg-purple-700/25 rounded-full w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 flex items-center justify-center">
@@ -127,18 +125,20 @@ function CaseStudySection() {
 					<div className="w-full md:w-2/3 text-sm md:text-base text-[#E1DAF8] leading-relaxed">
 						<p>
 							We played a crucial role in helping Mad Capital Group, PBC design,
-							launch, manage, and iterate upon their Perennial Fund model, through
-							which they have raised tens of millions of dollars to deploy as patient
-							and responsive capital to support organic, regenerative farmers and
-							ranchers across the U.S. Mad Capital is an innovative and impact-oriented
-							finance company leveraging a wide range of capital sources to provide
-							flexible, transparent, and customized financing built exclusively for
-							organic, regenerative, and transitioning farmers.
-							<br /><br />
+							launch, manage, and iterate upon their Perennial Fund model,
+							through which they have raised tens of millions of dollars to
+							deploy as patient and responsive capital to support organic,
+							regenerative farmers and ranchers across the U.S. Mad Capital is
+							an innovative and impact-oriented finance company leveraging a
+							wide range of capital sources to provide flexible, transparent,
+							and customized financing built exclusively for organic,
+							regenerative, and transitioning farmers.
+							<br />
+							<br />
 							We also helped Mad Capital with its own organizational growth and
-							development, negotiating and formalizing Mad Capital’s spin off from its
-							nonprofit incubator, and negotiating impact-conscious venture financing
-							in connection with that launch.{" "}
+							development, negotiating and formalizing Mad Capital’s spin off
+							from its nonprofit incubator, and negotiating impact-conscious
+							venture financing in connection with that launch.{" "}
 							<a
 								href="#"
 								className="text-[#D1AFFF] underline decoration-purple-600 hover:opacity-80 transition"
@@ -147,7 +147,6 @@ function CaseStudySection() {
 							</a>
 						</p>
 					</div>
-					
 				</div>
 			</div>
 		</section>
@@ -157,8 +156,7 @@ function CaseStudySection() {
 function ImpactFundCards({ number, heading1, heading2, desc }) {
 	return (
 		<section className="text-green-900 px-4 md:px-12 py-8 md:py-16">
-			<div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-y-8 gap-x-12 items-start">
-				
+			<div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-y-8 gap-x-12 items-start">
 				{/* Left Column - Number + Heading */}
 				<div className="md:col-span-1 flex flex-col space-y-2">
 					<p className="text-sm font-semibold text-green-700">{number}</p>
@@ -170,7 +168,7 @@ function ImpactFundCards({ number, heading1, heading2, desc }) {
 				</div>
 
 				{/* Right Column - Description */}
-				<div className="md:col-span-3 text-sm md:text-base leading-relaxed text-green-900">
+				<div className="md:col-span-3 self-center text-sm md:text-base leading-relaxed text-green-900">
 					<p>{desc}</p>
 				</div>
 			</div>
@@ -186,14 +184,14 @@ const OtherPracticeAreas = ({
 	],
 }) => {
 	return (
-		<section className="px-4 md:px-16 max-w-7xl mx-auto py-12">
+		<section className="px-4 md:px-16 my-24 max-w-7xl mx-auto py-12">
 			{/* Header */}
 			<h2 className="text-sm text-center font-semibold text-gray-800 uppercase mb-8">
 				Other Practice Areas
 			</h2>
 
 			{/* Cards Container */}
-			<div className="flex flex-wrap justify-center gap-4">
+			<div className="flex flex-wrap justify-center gap-8">
 				{practiceAreas.map((area) => (
 					<a
 						href="#"
@@ -211,10 +209,13 @@ const OtherPracticeAreas = ({
 	);
 };
 
+
 function TypeOfClient() {
 	return (
 		<section className="py-16 px-4 md:px-12 bg-white lg:ml-[24rem]">
-			<h3 className="font-bold mb-12 text-center lg:text-left">Types of Clients</h3>
+			<h3 className="font-bold mb-12 text-center lg:text-left">
+				Types of Clients
+			</h3>
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-white max-w-6xl mx-auto">
 				<div className="bg-green-900 rounded-2xl px-6 py-10 flex flex-col items-center text-center shadow-lg hover:scale-105 transition-transform">
