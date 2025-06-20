@@ -124,7 +124,7 @@ export default function Navbar() {
 							onMouseEnter={() => setHoverDropdown(true)}
 						>
 							<button
-								className="hover:underline flex items-center justify-center space-x-1 w-full"
+								className="hover:underline cursor-pointer flex items-center justify-center space-x-1 w-full"
 								aria-haspopup="true"
 								aria-expanded={hoverDropdown}
 							>
