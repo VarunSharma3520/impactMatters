@@ -21,11 +21,11 @@ const Mission = () => {
 				</p>
 
 				<p>
-					<div className="font-bold text-black inline">
+					<span className="font-bold text-black inline">
 						Impact Matters Law provides creative legal solutions to businesses
 						and organizations focused on creating community-driven impacts and
 						positive change in their industries.
-					</div>
+					</span>
 					Our legal practice is rooted in four foundational values that inform
 					every decision we make and every partnership we build. These
 					principles are at the heart of our work and guide us in supporting

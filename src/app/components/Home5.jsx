@@ -50,10 +50,10 @@ const data = [
 ];
 
 export default function Home5() {
-const [openIndex, setOpenIndex] = useState(0);
+	const [openIndex, setOpenIndex] = useState(0);
 
 	return (
-		<div
+		<section
 			className="bg-green-950 text-amber-100 p-4 sm:p-6 md:p-12 space-y-6 font-sans"
 			style={{
 				backgroundImage: `url(${noise.src})`,
@@ -62,66 +62,68 @@ const [openIndex, setOpenIndex] = useState(0);
 				backgroundBlendMode: "overlay",
 			}}
 		>
-			<div className="uppercase text-xs sm:text-sm text-green-100 tracking-widest">
-				What we do
-			</div>
-			<h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold leading-snug max-w-full sm:max-w-3xl">
-				We Offer&nbsp;
-				<span className="">Comprehensive Legal Services</span>
-				&nbsp;Designed To Support Impactful Ventures At Every Stage.
-			</h2>
+			<div className="mx-auto max-w-7xl">
+				<div className="uppercase text-xs sm:text-sm text-green-100 tracking-widest">
+					What we do
+				</div>
+				<h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold leading-snug max-w-full sm:max-w-3xl">
+					We Offer&nbsp;
+					<span className="">Comprehensive Legal Services</span>
+					&nbsp;Designed To Support Impactful Ventures At Every Stage.
+				</h2>
 
-			<div className="space-y-3 pt-4 sm:pt-6">
-				{data.map((item, index) => {
-					const isOpen = openIndex === index;
-					return (
-						<div
-							key={index}
-							className={`rounded-md ${
-								isOpen ? "bg-[#739F69]" : "hover:bg-green-800/30"
-							} transition-colors duration-200`}
-						>
-							<button
-								onClick={() => setOpenIndex(isOpen ? null : index)}
-								className={`w-full text-left flex justify-between items-center px-3 sm:px-4 py-3 sm:py-4 font-semibold text-base sm:text-lg ${
-									isOpen ? "text-green-950" : ""
-								}`}
-								aria-expanded={isOpen}
-								aria-controls={`accordion-content-${index}`}
-								id={`accordion-header-${index}`}
+				<div className="space-y-3 pt-4 sm:pt-6">
+					{data.map((item, index) => {
+						const isOpen = openIndex === index;
+						return (
+							<div
+								key={index}
+								className={`rounded-md ${
+									isOpen ? "bg-[#739F69]" : "hover:bg-green-800/30"
+								} transition-colors duration-200`}
 							>
-								<span className="flex-1">{item.title}</span>
-								<span className="ml-4 flex-shrink-0">
-									{isOpen ? <X size={20} /> : <Plus size={20} />}
-								</span>
-							</button>
-
-							{isOpen && item.description && (
-								<div
-									id={`accordion-content-${index}`}
-									role="region"
-									aria-labelledby={`accordion-header-${index}`}
-									className="flex flex-col sm:flex-row justify-between border-t border-green-950 px-3 sm:px-4 pb-4 space-y-3 sm:space-y-0 sm:space-x-4"
+								<button
+									onClick={() => setOpenIndex(isOpen ? null : index)}
+									className={`w-full text-left flex justify-between items-center px-3 sm:px-4 py-3 sm:py-4 font-semibold text-base sm:text-lg ${
+										isOpen ? "text-green-950" : ""
+									}`}
+									aria-expanded={isOpen}
+									aria-controls={`accordion-content-${index}`}
+									id={`accordion-header-${index}`}
 								>
-									<p className="text-sm sm:text-base text-green-950 flex-1">
-										{item.description}
-									</p>
-									{item.link && (
-										<Link
-											href={item.link}
-											className="mt-2 inline-flex items-center px-2 py-2 rounded bg-green-900  hover:bg-green-800 transition text-sm sm:text-base "
-											aria-label={`Learn more about ${item.title}`}
-										>
-											Learn More 
-											<ArrowUpRight className="w-4 h-4 mr-1" />
-										</Link>
-									)}
-								</div>
-							)}
-						</div>
-					);
-				})}
+									<span className="flex-1">{item.title}</span>
+									<span className="ml-4 flex-shrink-0">
+										{isOpen ? <X size={20} /> : <Plus size={20} />}
+									</span>
+								</button>
+
+								{isOpen && item.description && (
+									<div
+										id={`accordion-content-${index}`}
+										role="region"
+										aria-labelledby={`accordion-header-${index}`}
+										className="flex flex-col sm:flex-row justify-between border-t border-green-950 px-3 sm:px-4 pb-4 space-y-3 sm:space-y-0 sm:space-x-4"
+									>
+										<p className="text-sm sm:text-base text-green-950 flex-1">
+											{item.description}
+										</p>
+										{item.link && (
+											<Link
+												href={item.link}
+												className="mt-2 inline-flex items-center px-2 py-2 rounded bg-green-900  hover:bg-green-800 transition text-sm sm:text-base "
+												aria-label={`Learn more about ${item.title}`}
+											>
+												Learn More
+												<ArrowUpRight className="w-4 h-4 mr-1" />
+											</Link>
+										)}
+									</div>
+								)}
+							</div>
+						);
+					})}
+				</div>
 			</div>
-		</div>
+		</section>
 	);
 }
