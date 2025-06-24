@@ -1,8 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowUpRight, X, Plus } from "lucide-react";
 import Link from "next/link";
 import noise from "../../assets/images/noise.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const data = [
 	{
@@ -51,6 +53,12 @@ const data = [
 
 export default function Home5() {
 	const [openIndex, setOpenIndex] = useState(0);
+	useEffect(() => {
+		AOS.init({
+			duration: 800,
+			once: true,
+		});
+	}, []);
 
 	return (
 		<section
@@ -63,7 +71,12 @@ export default function Home5() {
 			}}
 		>
 			<div className="mx-auto max-w-7xl">
-				<div className="uppercase text-xs sm:text-sm text-green-100 tracking-widest">
+				<div
+					data-aos="zoom-in"
+					data-aos-duration="1000"
+					data-aos-once="false"
+					className="uppercase text-xs sm:text-sm text-green-100 tracking-widest"
+				>
 					What we do
 				</div>
 				<h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold leading-snug max-w-full sm:max-w-3xl">
@@ -77,6 +90,9 @@ export default function Home5() {
 						const isOpen = openIndex === index;
 						return (
 							<div
+								data-aos="zoom-in"
+								data-aos-duration="500"
+								data-aos-delay={index * 100}
 								key={index}
 								className={`rounded-md ${
 									isOpen ? "bg-[#739F69]" : "hover:bg-green-800/30"

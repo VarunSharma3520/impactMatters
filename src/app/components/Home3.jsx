@@ -1,29 +1,35 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight, X, Plus } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const clients = [
 	{
 		title: "Impact-Focused Investment Funds",
 		color: "bg-[#510C0C]",
+		image: "https://placehold.co/400x600",
 		description:
 			"We partner with innovators from a wide range of sectors to launch mission-driven investment funds that prioritize social and environmental impact alongside financial returns.",
 	},
 	{
-		title: "Social Enterprises and Startups",
+		title: "Social Enterprises, Nonprofits and Startups",
 		color: "bg-[#3D1271]",
+		image: "https://placehold.co/400x600",
 		description:
 			"Supporting early-stage ventures focused on solving real-world problems with sustainable, scalable solutions.",
 	},
 	{
 		title: "Cooperative and Community Ownership",
 		color: "bg-[#1B361F]",
+		image: "https://placehold.co/400x600",
 		description:
 			"Enabling equitable ownership models that empower communities and foster long-term sustainability.",
 	},
 	{
-		title: "Technology for Good Initiatives",
+		title: "Technology for Good Initiatives and Organizations",
 		color: "bg-[#510C0C]",
+		image: "https://placehold.co/400x600",
 		description:
 			"Collaborating with tech-based organizations driving social change through innovation and accessibility.",
 	},
@@ -37,22 +43,30 @@ const clients = [
 
 export default function Home3() {
 	const [selected, setSelected] = useState(null);
+	useEffect(() => {
+		AOS.init({
+			duration: 800,
+			once: false,
+		});
+	}, []);
 
 	return (
 		<section className="bg-white text-green-900 px-6 py-12 border-t border-b border-black relative overflow-hidden">
 			<div className="max-w-7xl mx-auto relative z-10">
-				<p className="text-sm font-semibold tracking-widest mb-2">
-					WHO WE SERVE
-				</p>
+				<div data-aos="flip-right" data-aos-duration="1000" data-aos-once="false">
+					<p className="text-sm font-semibold tracking-widest mb-2">
+						WHO WE SERVE
+					</p>
+				</div>
 				<h2 className="text-2xl md:text-4xl font-medium leading-snug">
 					We&apos;re proud to partner with the{" "}
-					<strong>builders of tomorrow</strong> – those shaping a brighter, more
-					equitable future.
+					<span className="font-bold">builders of tomorrow</span> – those
+					shaping a brighter, more equitable future.
 					<br />
 					Our clients include:
 				</h2>
 
-				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10">
+				<div className="grid grid-cols-2 group: md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10">
 					{clients.map((client, index) => (
 						<button
 							key={index}
@@ -60,14 +74,19 @@ export default function Home3() {
 							className="flex flex-col border border-gray-200 font-semibold text-2xl cursor-pointer"
 						>
 							<img
-								src="https://placehold.co/600x900"
+								src={client.image || "https://placehold.co/400x600"}
 								alt={client.title}
-								className="w-full h-auto object-cover"
+								className="w-full h-auto object-cover group-hover:scale-125 transition-transform duration-300"
 							/>
 							<div
 								className={`flex justify-between items-center text-white px-3 py-4 ${client.color}`}
 							>
-								<span className="text-sm font-medium text-left">
+								<span
+									data-aos="zoom-in"
+									data-aos-duration="500"
+									data-aos-delay={index * 100}
+									className="text-sm font-medium text-left"
+								>
 									{client.title}
 								</span>
 								<Plus size={16} />

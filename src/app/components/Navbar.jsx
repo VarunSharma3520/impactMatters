@@ -2,12 +2,20 @@
 
 import Link from "next/link";
 import { ArrowUpRight, Menu, X, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import noise from "../../assets/images/noise.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Navbar() {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [hoverDropdown, setHoverDropdown] = useState(false);
+	useEffect(() => {
+		AOS.init({
+			duration: 500,
+			once: true,
+		});
+	}, []);
 
 	const closeMenus = () => {
 		setMenuOpen(false);
@@ -79,7 +87,9 @@ export default function Navbar() {
 			className="bg-green-950 py-4 px-6 text-amber-100 sticky top-0 z-50"
 			style={menuStyles}
 		>
-			<div className="max-w-7xl mx-auto flex justify-between items-center relative z-50">
+			<div
+				className="max-w-7xl mx-auto flex justify-between items-center relative z-50"
+			>
 				{/* Logo */}
 				<a
 					href="/"
@@ -111,6 +121,9 @@ export default function Navbar() {
 						style={menuOpen ? menuStyles : {}}
 					>
 						<a
+							data-aos="fade-down"
+							data-aos-duration="300"
+							data-aos-easing="ease-in-sine"
 							href="/impact"
 							className="hover:underline w-full text-center md:w-auto"
 							onClick={closeMenus}
@@ -120,6 +133,9 @@ export default function Navbar() {
 
 						{/* Practice Areas (hover on desktop only) */}
 						<div
+							data-aos="fade-down"
+							data-aos-duration="400"
+							data-aos-easing="ease-in-sine"
 							className="relative w-full md:w-auto"
 							onMouseEnter={() => setHoverDropdown(true)}
 						>
@@ -139,6 +155,9 @@ export default function Navbar() {
 						</div>
 
 						<a
+							data-aos="fade-down"
+							data-aos-duration="500"
+							data-aos-easing="ease-in-sine"
 							href="/team-member"
 							className="hover:underline w-full text-center md:w-auto"
 							onClick={closeMenus}
@@ -147,6 +166,9 @@ export default function Navbar() {
 						</a>
 
 						<a
+							data-aos="fade-down"
+							data-aos-duration="600"
+							data-aos-easing="ease-in-sine"
 							href="/contact-us"
 							className="flex items-center justify-center space-x-1 text-sm border-amber-100 px-3 py-1 border w-full md:w-auto"
 							onClick={closeMenus}
