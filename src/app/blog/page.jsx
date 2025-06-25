@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import imageUrlBuilder from "@sanity/image-url";
-import { client } from "@/sanity/lib/client";
+import { client } from "../../sanity/lib/client";
 import noise from "../../assets/images/noise.svg";
 
 const POSTS_PER_PAGE = 6;
